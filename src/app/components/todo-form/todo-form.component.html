@@ -1,0 +1,25 @@
+<form class="todo-form" (ngSubmit)="addTodo()">
+  <h2>Nueva Tarea</h2>
+
+  <div class="form-group">
+    <label for="description">Descripción:</label>
+    <input
+      type="text"
+      id="description"
+      name="description"
+      [(ngModel)]="newTodoDescription"
+      autocomplete="off"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="description">Estado:</label>
+    <app-dropdown
+      [options]="statusOptions"
+      [optionSelected]="newTodoStatus"
+      (onSelect)="changeStatus($event)"
+    />
+  </div>
+
+  <button type="submit">Agregar Tarea</button>
+</form>

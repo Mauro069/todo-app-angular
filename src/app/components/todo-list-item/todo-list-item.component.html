@@ -1,0 +1,24 @@
+<div *ngIf="todo" class="todo">
+  <div class="top">
+    <p *ngIf="todo.createdAt">{{ todo.createdAt | dateFormat }}</p>
+    <button (click)="removeTodo()">
+      <img src="assets/cross_mark.svg" alt="cross" />
+    </button>
+  </div>
+
+  <div class="bottom">
+    <span
+      [ngStyle]="{
+        'text-decoration': todo.status === 'finished' ? 'line-through' : 'none'
+      }"
+    >
+      {{ todo.description }}
+    </span>
+
+    <app-dropdown
+      [options]="statusOptions"
+      [optionSelected]="optionSelected"
+      (onSelect)="changeStatus($event)"
+    />
+  </div>
+</div>

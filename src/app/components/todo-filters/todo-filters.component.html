@@ -1,0 +1,9 @@
+<div class="form-group">
+  <label class="statusSelect"> Filtrar por estado: </label>
+
+  <app-dropdown
+    [options]="filterOptions"
+    [optionSelected]="selectedStatus"
+    (onSelect)="filterByStatus($event)"
+  />
+</div>

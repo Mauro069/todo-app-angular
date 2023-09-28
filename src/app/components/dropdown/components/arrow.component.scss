@@ -1,0 +1,9 @@
+.svg {
+    transition-duration: 0.3s;
+    transform: rotate(0deg);
+}
+
+.active {
+    transition-duration: 0.3s;
+    transform: rotate(180deg);
+}

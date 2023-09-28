@@ -1,0 +1,83 @@
+$select_width: 200px;
+$select_height: 40px;
+
+.selectContainer {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    width: 100%;
+    min-width: $select_width;
+
+    .option-selected {
+        width: fit-content;
+    }
+
+    .select {
+        width: 100%;
+        color: white;
+        height: $select_height;
+        border: 1px solid #29292F;
+        font-size: 14px;
+        padding: 0 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .withOpacity {
+            color: #ffffff30;
+        }
+
+        &:hover {
+            transition-duration: 0.3s;
+            filter: brightness(1.5);
+        }
+    }
+
+    .options {
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        margin-top: $select_height;
+        width: $select_width;
+        max-height: 200px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        border: 1px solid #29292F;
+        z-index: 999;
+
+        .option {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            height: 40px;
+            font-size: 14px;
+            color: white;
+            text-decoration: none;
+            background: #1E1F25;
+            padding: 10px 1rem;
+            font-weight: normal;
+            border-bottom: 1px solid #ffffff10;
+
+            &:last-child {
+                border: none;
+            }
+
+            &:hover {
+                transition-duration: 0.3s;
+                font-weight: bold;
+            }
+        }
+
+
+    }
+
+    .options::-webkit-scrollbar {
+        width: 2px;
+        background: #251f2b;
+    }
+
+    .options::-webkit-scrollbar-thumb {
+        border: 3px solid #ffffff25;
+    }
+}
